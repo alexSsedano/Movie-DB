@@ -1,0 +1,73 @@
+@charset "utf-8";
+/* CSS Document */
+
+#menue {grid-area: menue;}
+#columLeft {grid-area: columLeft;}
+#columCenter {grid-area: columCenter;}
+#columRight {grid-area: columRight;}
+#footer {grid-area: footer;}
+body{
+    margin: 0px;
+    height: 1080px;
+ }
+ input{
+     border-radius: 20% 20%;
+ }
+@media screen and (min-width: 480px)  {
+	body{
+		grid-template-columns: 1fr 1fr 1fr ;
+		grid-template-rows: 90px 10fr 90px ;
+		display: grid;
+		grid-template-areas:
+			 'menue menue menue'
+			 'columLeft columCenter columRight'
+			 'footer footer footer';
+    }
+    #menue{
+        background-color: black;
+        
+    }
+    #columRight{
+        background-color: gray;
+    }
+    #columLeft{
+        background-color: gray;
+    }
+    #columCenter{
+        background-color: gray;
+    }
+    #footer{
+        background-color: black;
+    }
+
+
+}
+
+@media screen and (max-width: 480px)  {
+	body{
+		grid-template-columns: 1fr  ;
+		grid-template-rows: 1fr 1fr 1fr 1fr 1fr  ;
+		display: grid;
+		grid-template-areas:
+			 'menue '
+             'columLeft'
+             'columCenter'
+             'columRight'
+			 'footer';
+    }
+    #menue{
+        background-color: black;
+    }
+    #columRight{
+        background-color: gray;
+    }
+    #columLeft{
+        background-color: gray;
+    }
+    #columCenter{
+        background-color: gray;
+    }
+    #footer{
+        background-color: black;
+    }
+}
