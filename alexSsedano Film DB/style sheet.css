@@ -2,7 +2,6 @@
 /* CSS Document */
 
 #menue {grid-area: menue;}
-#columLeft {grid-area: columLeft;}
 #columCenter {grid-area: columCenter;}
 #columRight {grid-area: columRight;}
 #footer {grid-area: footer;}
@@ -12,18 +11,23 @@ body{
  }
  
  input{
-     border-radius: 20% 20%;
+     border-radius: 100px 100px 100px 100px;
  }
 @media screen and (min-width: 480px)  {
 	body{
-		grid-template-columns: 1fr 1fr 1fr ;
+		grid-template-columns: 1fr 1fr  ;
 		grid-template-rows: 90px 10fr 90px ;
 		display: grid;
 		grid-template-areas:
-			 'menue menue menue'
-			 'columLeft columCenter columRight'
-			 'footer footer footer';
+			 'menue menue '
+			 'columCenter columRight'
+			 'footer footer ';
     }
+    .search{
+        margin-top: 20px;
+        margin-inline-start: 20px;
+    }
+  
     #menue{
         background-color: black;
         
@@ -48,11 +52,10 @@ body{
 @media screen and (max-width: 480px)  {
 	body{
 		grid-template-columns: 1fr  ;
-		grid-template-rows: 1fr 1fr 1fr 1fr 1fr  ;
+		grid-template-rows: 1 1fr 1fr 1fr 1fr  ;
 		display: grid;
 		grid-template-areas:
 			 'menue '
-             'columLeft'
              'columCenter'
              'columRight'
 			 'footer';
