@@ -9,7 +9,7 @@ function searchFilmImage(){
 	if (keyWord!="" && keyWord!=undefined){
 		$.ajax({
 			method: "GET",
-			url:"http://www.omdbapi.com/?apikey=5275f66d&s="+keyWord+"&page="+page
+			url:"https://www.omdbapi.com/?apikey=5275f66d&s="+keyWord+"&page="+page
 		})
 		.done(function (response) {
 			
@@ -81,7 +81,7 @@ $(".initial > button").click(function(){
 	  let zindex =$(this).css("z-index");
 	  $.ajax({
 		method: "GET",
-		url:"http://www.omdbapi.com/?apikey=5275f66d&i="+this.id
+		url:"https://www.omdbapi.com/?apikey=5275f66d&i="+this.id
 	})
 	.done(function (content) {
 		console.log(content);
