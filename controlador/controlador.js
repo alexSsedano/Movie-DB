@@ -17,6 +17,7 @@ function searchFilmImage(){
 				$("#columCenter").append( "<br>");
 				$("#columCenter").append( "<img class='Image' id='"+ response.Search[i].imdbID +"'src="+ response.Search[i].Poster+">" );
 				$(" .Image").css("margin-left", "30px");
+				$(" .Image").css("border"," 3px solid black ");
 				id++
 			}
 		});
@@ -44,6 +45,7 @@ $(".iSearch, .initialSearch").css("margin-top", "40px");
 $(".iSearch, .initial > button").css("width", "30%");
 $(".iSearch, input, button").css("height", "30px");
 $(" button, input").css("border-radius"," 5px 5px 5px 5px");
+
 
 $(".initial > button").click(function(){
 	page = 1;
@@ -93,6 +95,18 @@ $('body').on('click','.Image',function(){
 		$(".fixed" ).animate({top: pos.top+20 }, 1500 );
 	});
 })
+
+$('body').on('mouseenter','.Image',function(){
+	    $( this ).css("border-color"," red ");
+	}
+  );
+  
+$('body').on('mouseleave','.Image',function(){	
+	$( this ).css("border-color"," black ");
+}
+);
+
+
 
 	var win = $(window);
 	win.scroll(function() {
