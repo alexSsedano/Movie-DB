@@ -16,7 +16,7 @@ function searchFilmImage(){
 			for(let i = 0; i <= response.Search.length-1 ;i++){
 				$("#columCenter").append( "<br>");
 				$("#columCenter").append( "<img class='Image' id='"+ response.Search[i].imdbID +"'src="+ response.Search[i].Poster+">" );
-				
+				$(" .Image").css("margin-left", "30px");
 				id++
 			}
 		});
@@ -29,16 +29,7 @@ function searchFilmImage(){
 $(".search").append( "<input type='text' id='search' name='search' value=''/>");
 $(".search").append( "<button id='button' type='button'>Search</button>");
 $(".search").hide();
-
-
-
 $("#columCenter").append( "<div style='position: absolute' class='initial'></div>");
-$(".initial").append( "<p>Search for a movie</p>" );
-$(".initial > p").css("color", "white");
-$(".initial > p").css("background-color", "red");
-
-
-
 $(".initial").append( "<input type='text' class='iSearch' name='search' value=''/>" );
 $(".initial").append( "<br>" );
 $(".initial").append( "<button class='initialSearch' type='button'>Search</button>" );
@@ -46,16 +37,13 @@ $(".initial").css("top", "50%");
 $(".initial").css("width", "100%");
 $(".initial").css("height", "200px");
 $(".initial").css("background-color", "rgba(0, 0, 0, 0.8)");
-
-$(".iSearch, .initial > p, .initialSearch").css("margin-left", "35%");
-$(".iSearch, .initial > p, .initialSearch").css("margin-top", "30px");
-$(".iSearch, .initial > p, .initial > button").css("width", "30%");
-$(".iSearch, .initial > p, input, button").css("height", "30px");
-$(" .initial > p").css("margin-bottom", "0px");
-$(" .initial > p").css("text-align", "center");
-$(" .initial > p, button, input").css("border-radius"," 5px 5px 5px 5px");
-
-
+$(".iSearch, .initialSearch").css("margin-left", "35%");
+$(".search > input").css("width", "300px");
+$(".search > button, .search > input").css("margin-left", "10px");
+$(".iSearch, .initialSearch").css("margin-top", "40px");
+$(".iSearch, .initial > button").css("width", "30%");
+$(".iSearch, input, button").css("height", "30px");
+$(" button, input").css("border-radius"," 5px 5px 5px 5px");
 
 $(".initial > button").click(function(){
 	page = 1;
@@ -75,14 +63,14 @@ $(".initial > button").click(function(){
 	searchFilmImage();
 });
 
-  $('body').on('click','.Image',function(){
-	  let pos = $(this).position('#columCenter') ;
-	  let h = this.height;
-	  let zindex =$(this).css("z-index");
-	  $.ajax({
-		method: "GET",
-		url:"https://www.omdbapi.com/?apikey=5275f66d&i="+this.id
-	})
+$('body').on('click','.Image',function(){
+	let pos = $(this).position('#columCenter') ;
+	let h = this.height;
+	let zindex =$(this).css("z-index");
+	$.ajax({
+	method: "GET",
+	url:"https://www.omdbapi.com/?apikey=5275f66d&i="+this.id
+})
 	.done(function (content) {
 		console.log(content);
 		$(".fixed").remove();
@@ -104,7 +92,7 @@ $(".initial > button").click(function(){
 		$(".fixed").css( "zIndex", -1 );
 		$(".fixed" ).animate({top: pos.top+20 }, 1500 );
 	});
-	})
+})
 
 	var win = $(window);
 	win.scroll(function() {
@@ -113,6 +101,14 @@ $(".initial > button").click(function(){
 		}
 	});
 });
+
+
+
+
+
+
+
+
  
 
 
