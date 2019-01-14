@@ -18,6 +18,8 @@ function searchFilmImage(){
 				$("#columCenter").append( "<img class='Image' id='"+ response.Search[i].imdbID +"'src="+ response.Search[i].Poster+">" );
 				$(" .Image").css("margin-left", "30px");
 				$(" .Image").css("border"," 3px solid black ");
+				$(" .Image").css("min-width"," 300px ");
+				$(" .Image").css("min-height"," 466px");
 				id++
 			}
 		});
@@ -100,7 +102,6 @@ $('body').on('mouseenter','.Image',function(){
 	    $( this ).css("border-color"," red ");
 	}
   );
-  
 $('body').on('mouseleave','.Image',function(){	
 	$( this ).css("border-color"," black ");
 }
